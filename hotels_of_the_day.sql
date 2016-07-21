@@ -1,0 +1,1 @@
+SELECT `hotels`.`name`, COUNT(*) FROM `reservations` INNER JOIN `hotels` ON `reservations`.`idHotel` = `hotels`.`id` WHERE `reservations`.`checkinDate` = NOW() GROUP BY `hotels`.`name`;

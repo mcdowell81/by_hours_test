@@ -1,0 +1,1 @@
+SELECT sum(`rooms`.`nightPrice`) FROM `reservations` INNER JOIN `rooms` on `reservations`.`idRoom` = `rooms`.`id` WHERE `reservations`.`checkinDate` = NOW();
