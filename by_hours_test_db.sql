@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 21-07-2016 a las 16:54:05
+-- Tiempo de generación: 21-07-2016 a las 18:56:21
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.6.15
 
@@ -63,7 +63,8 @@ INSERT INTO `phinxlog` (`version`, `migration_name`, `start_time`, `end_time`) V
 (20160720175457, 'CreateRooms', '2016-07-20 16:06:35', '2016-07-20 16:06:35'),
 (20160720175634, 'CreateReservations', '2016-07-20 16:06:35', '2016-07-20 16:06:35'),
 (20160720175719, 'CreateUsers', '2016-07-20 16:06:35', '2016-07-20 16:06:35'),
-(20160720175828, 'AddIdUserToReservations', '2016-07-20 16:06:35', '2016-07-20 16:06:35');
+(20160720175828, 'AddIdUserToReservations', '2016-07-20 16:06:35', '2016-07-20 16:06:35'),
+(20160721152349, 'AddIdHotelToReservations', '2016-07-21 13:24:37', '2016-07-21 13:24:37');
 
 -- --------------------------------------------------------
 
@@ -74,12 +75,21 @@ INSERT INTO `phinxlog` (`version`, `migration_name`, `start_time`, `end_time`) V
 CREATE TABLE `reservations` (
   `id` char(36) NOT NULL,
   `idRoom` char(36) NOT NULL,
+  `idHotel` char(36) NOT NULL,
   `idUser` char(36) NOT NULL,
   `checkinDate` datetime NOT NULL,
   `nights` int(11) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `reservations`
+--
+
+INSERT INTO `reservations` (`id`, `idRoom`, `idHotel`, `idUser`, `checkinDate`, `nights`, `created`, `modified`) VALUES
+('976693c8-4f55-11e6-8c4a-3c07546b3c35', '036bd336-4ea6-11e6-8c4a-3c07546b3c35', '953f354c-4ea5-11e6-8c4a-3c07546b3c35', '41963836-4ea6-11e6-8c4a-3c07546b3c35', '2016-07-21 00:00:00', 1, '2016-07-21 00:00:00', '2016-07-21 00:00:00'),
+('9766a0ac-4f55-11e6-8c4a-3c07546b3c35', '24887358-4ea6-11e6-8c4a-3c07546b3c35', '953f44a6-4ea5-11e6-8c4a-3c07546b3c35', '4196434e-4ea6-11e6-8c4a-3c07546b3c35', '2016-07-21 00:00:00', 2, '2016-07-21 00:00:00', '2016-07-21 00:00:00');
 
 -- --------------------------------------------------------
 
