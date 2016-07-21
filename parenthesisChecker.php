@@ -49,7 +49,7 @@ class parenthesisChecker
 
 try 
 {
-    $parenthesisChecker = new parenthesisChecker("Hola()");
+    $parenthesisChecker = new parenthesisChecker("Hola(prueba)(parentesis)");
 } 
 catch ( Exception $e )
 {
