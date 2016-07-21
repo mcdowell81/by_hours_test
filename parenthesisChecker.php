@@ -13,7 +13,7 @@ class parenthesisChecker
 
     private function checkString() 
     {
-        if ( ! $this->ifGoodOrder() ) {
+        if ( ! $this->isGoodOrder() ) {
             throw new Exception("Exception Mismatched Parenthesis");     
         }
 
@@ -26,7 +26,7 @@ class parenthesisChecker
         return true;
     }
 
-    private function ifGoodOrder()
+    private function isGoodOrder()
     {
         $firstOpen = strpos($this->string, '(');
         $firstClose = strpos($this->string, ')');
